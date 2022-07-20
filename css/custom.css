@@ -1,6 +1,10 @@
 
 /* @import url('../assets/KindestReality.ttf'); */
 
+:root {
+    --light-green: #E7F7ED;
+}
+
 @font-face {
     font-family: 'Mogena Regular';
     font-style: normal;
@@ -119,5 +123,17 @@ h1, h2, h3 {
 }
 
 .bg-green-light {
-    background-color: #E7F7ED;
+    background-color: var(--light-green);
+}
+
+.quick-contact {
+    background-color: var(--light-green);
+}
+
+.text-footer {
+    color: #484848;
+}
+
+a {
+    color: #0ba436!important;
 }
