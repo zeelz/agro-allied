@@ -46,9 +46,12 @@ h1, h2, h3 {
     color: white
 }
 
-.nav-item .nav-link:hover {
+.nav-item:not(.nav-item.active) .nav-link:hover {
     color: #F0AE04;
     /* text-decoration: underline; */
+}
+.nav-item.active:hover {
+    border-bottom: solid #FFF 1px;
 }
 
 .accent {
@@ -134,6 +137,6 @@ h1, h2, h3 {
     color: #484848;
 }
 
-a {
+a.green {
     color: #0ba436!important;
 }
