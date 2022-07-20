@@ -1,0 +1,123 @@
+
+/* @import url('../assets/KindestReality.ttf'); */
+
+@font-face {
+    font-family: 'Mogena Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Mogena Regular'), url('../assets/fonts/Mogena.woff') format('woff');
+}
+
+
+
+.hero-bg {
+    background-image: linear-gradient(to right, rgb(240 174 4 / 50%), rgb(4 171 71 / 50%)), url(../assets/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1, h2, h3 {
+    font-family: 'Mogena Regular', sans-serif;
+}
+
+
+.agro-logo {
+    width: 100px;
+}
+
+
+
+.nav-item {
+    margin: 0 3px;
+}
+
+.nav-item.active {
+    background-color: #F0AE04;
+    padding: 0px 20px;
+    border-radius: 3px;
+}
+
+
+.nav-item .nav-link {
+    color: white
+}
+
+.nav-item .nav-link:hover {
+    color: #F0AE04;
+    /* text-decoration: underline; */
+}
+
+.accent {
+    color: #F0AE04
+}
+
+.curve-yellow,
+.curve-green {
+    display: inline-block;
+    position: relative;
+}
+
+
+.curve-yellow::after,
+.curve-green::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    height: 15px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.curve-yellow::after{
+    background-image: url('../assets/curve-yellow.png');
+}
+
+.curve-green::after{
+    background-image: url('../assets/curve-green.png');
+}
+
+.feature .icon {
+    height: 70px;
+}
+
+.styled-border-left,
+.styled-border-right {
+    display: block;
+    position: relative;
+}
+.styled-border-left::before,
+.styled-border-right::before  {
+    position: absolute;
+    content: "";
+    border: dashed #0ba436 2px;
+    border-radius: 8px;
+    z-index: -1;
+}
+
+.styled-border-left::before {
+    bottom: 65px;
+    right: 65px;
+    height: 90%;
+    width: 90%;
+}
+
+.styled-border-right::before {
+    top: 65px;
+    left: 65px;
+    height: 90%;
+    width: 90%;
+}
+
+.round-xl {
+    border-radius: 10px;
+}
+
+.text-green {
+    color: #0ba436!important;
+}
+
+.bg-green-light {
+    background-color: #E7F7ED;
+}
