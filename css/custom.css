@@ -18,6 +18,12 @@
     background-image: linear-gradient(to right, rgb(240 174 4 / 50%), rgb(4 171 71 / 50%)), url(../assets/hero.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: 50%;
+}
+
+
+.hero-bg.about {
+    background-image: linear-gradient(to right, rgba(17, 17, 17, 0.75), rgb(4 171 71 / 50%)), url(../assets/hero-about.jpg);
 }
 
 h1, h2, h3 {
