@@ -2,7 +2,9 @@
 /* @import url('../assets/KindestReality.ttf'); */
 
 :root {
-    --light-green: #E7F7ED;
+    --green-light: #E7F7ED;
+    --green: #0ba436;
+    --yellow: #F0AE04;
 }
 
 @font-face {
@@ -15,7 +17,7 @@
 
 
 .hero-bg {
-    background-image: linear-gradient(to right, rgb(240 174 4 / 50%), rgb(4 171 71 / 50%)), url(../assets/hero.jpg);
+    background-image: linear-gradient(to right,rgba(0,0,0, .25), rgba(0, 0, 0, .25)), url(../assets/agro-allied-landscape.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: 50%;
@@ -42,26 +44,29 @@ h1, h2, h3 {
 }
 
 .nav-item.active {
-    background-color: #F0AE04;
+    background-color: var(--yellow);
     padding: 0px 20px;
     border-radius: 3px;
 }
 
 
 .nav-item .nav-link {
-    color: white
+    color: white!important
 }
 
 .nav-item:not(.nav-item.active) .nav-link:hover {
-    color: #F0AE04;
+    color: var(--yellow)!important;
     /* text-decoration: underline; */
 }
 .nav-item.active:hover {
     border-bottom: solid #FFF 1px;
 }
 
-.accent {
-    color: #F0AE04
+.accent-yellow {
+    color: var(--yellow)
+}
+.accent-green {
+    color: #04AB47
 }
 
 .curve-yellow,
@@ -128,15 +133,19 @@ h1, h2, h3 {
 }
 
 .text-green {
-    color: #0ba436!important;
+    color: var(--green)
 }
 
 .bg-green-light {
-    background-color: var(--light-green);
+    background-color: var(--green-light);
 }
 
 .quick-contact {
-    background-color: var(--light-green);
+    /* background-color: var(--green-light); */
+    /* background-image: url('../assets/green-landscape.png'); */
+    background-image: linear-gradient(to right, var(--green), rgba(0, 0, 0, .25)), url(../assets/green-landscape.png);
+    background-repeat: no-repeat;
+    background-position: bottom;
 }
 
 .text-footer {
@@ -145,4 +154,12 @@ h1, h2, h3 {
 
 a.green {
     color: #0ba436!important;
+}
+
+.services-item {
+    height: 160px;
+}
+
+.bg-yellow-light {
+    background: #fdf8eb;
 }

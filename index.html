@@ -17,33 +17,65 @@
     <body>
         <div class="hero-bg bg-dark">
         <!-- Responsive navbar-->
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
+        
+            <nav class="navbar sticky-top navbar-expand-lg navbar-light">                
 
-                    <a class="navbar-brand" href="#!">
-                        <img src="assets/agro-allied-logo.png" class="agro-logo" alt="Agro Allied Logo">
+                <div class="container-fluid">
+                    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                    <a class="navbar-brand py-0" href="#" style="width: 100px;">
+                        <img src="assets/agro-allied-logo.png" alt="Agro-Allied Logo" class="img-fluid">
                     </a>
-
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!">Our Services</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!">Our Model</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#!">Our Team</a></li>
-                            <li class="nav-item active"><a class="nav-link" aria-current="page" href="#!">Contact Us</a></li>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse flex-grow-0" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link text-white" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About Us</a>
+                            </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Technology
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Farm Monitor</a></li>
+                                <li><a class="dropdown-item" href="#">Farm Lord</a></li>
+                                <li><a class="dropdown-item" href="#">Crop Gap</a></li>
+                                <li><a class="dropdown-item" href="#">Farm Enrolment</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Our Farms
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Farm 1</a></li>
+                                <li><a class="dropdown-item" href="#">Farm 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Our Products</a>
+                        </li>
                         </ul>
+                        <button class="btn btn-warning text-white" type="button">Request Demo</button>
                     </div>
                 </div>
-            </nav>
+              </nav>
+
+
+
             <!-- Header-->
             <header class="bg-dark__ py-5 my-5">
-                <div class="container px-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-8 offset-2">
                             <div class="my-5">
-                                <h1 class="display-5 fw-bolder text-white mb-2">Food and Economic <span class="accent">Sustainability</span> <br> through <span class="curve-yellow">Agro Tech</span></h1>
-                                <p class="lead text-white mb-4 fs-5 lh-sm">We are a farm project-management company established to provide both cloud-based Enterprise Resource Planning (ERP) to enable real-time monitoring for private and cluster farms for improved farm operations</p>
+                                <h1 class="display-5 fw-bolder text-white text-center mb-2">Food and Economic <span class="accent-yellow">Sustainability</span> <br> through Agro Tech</h1>
+                                <p class="lead text-white text-center mb-4 fs-5 lh-sm">We are a farm project-management company established to provide both cloud-based Enterprise Resource Planning (ERP) to enable real-time monitoring for private and cluster farms for improved farm operations</p>
                                 <!-- <div class="d-grid gap-3 d-sm-flex justify-content-sm-center">
                                     <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
                                     <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
@@ -58,9 +90,9 @@
         <section class="my-5 py-5 text-center">
             <div class="container mt-4">
                 <div class="col-lg-6 offset-lg-3">
-                    <h1>Modern <span class="curve-green">Solutions</span> to Traditional 
+                    <h1>Modern Solutions to Traditional 
                     Farming Challenges</h1>
-                    <p>We facilitate stress free commercial farming of cash crops by farm owners (FarmLords) from the comfort of their homes using our interactive and user friendly electronic platforms.</p>
+                    <p class="fs-5">We facilitate stress free commercial farming of cash crops by farm owners (FarmLords) from the comfort of their homes using our interactive and user friendly electronic platforms.</p>
                 </div>
             </div>
             
@@ -71,56 +103,53 @@
         <section class="pb-5" id="features">
             <div class="container">
                 <div class="row gx-5">
-                    <div class="col-lg-3 mb-5 mb-lg-0">
-                        <div class="feature bg-gradient text-white rounded-3 mb-3">
+                    <div class="col-md-3 pe-1 ">
+                        <!-- <div class="feature bg-gradient text-white rounded-3 mb-3"> -->
                             <!-- <i class="bi bi-collection"></i> -->
-                            <img src="assets/1.png" class="icon" alt="">
+                            <!-- <img src="assets/1.png" class="icon" alt=""> -->
+                        <!-- </div> -->
+                        <div class="services-item border p-3 shadow-sm">
+                            <h2 class="h4 fw-bolder">FarmMonitor</h2>
+                            <p>Crop health monitoring, technology & personnel.</p>
+                            <a class="text-decoration-none small green" href="#!">
+                                Learn More
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </div>
-                        <h2 class="h4 fw-bolder">FarmMonitor</h2>
-                        <p>Crop health monitoring, technology & personnel.</p>
-                        <a class="text-decoration-none small green" href="#!">
-                            Learn More
-                            <i class="bi bi-chevron-right"></i>
-                        </a>
                     </div>
 
-                    <div class="col-lg-3 mb-5 mb-lg-0">
-                        <div class="feature bg-gradient text-white rounded-3 mb-3">
-                            <!-- <i class="bi bi-collection"></i> -->
-                            <img src="assets/2.png" class="icon" alt="">
+                    <div class="col-md-3 pe-1">
+                        <div class="services-item border shadow-sm p-3">
+                            <h2 class="h4 fw-bolder">CropGap</h2>
+                            <p>GAP training, Onsite remediation</p>
+                            <a class="text-decoration-none small green" href="#!">
+                                Learn More
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
                         </div>
-                        <h2 class="h4 fw-bolder">CropGap</h2>
+                    </div>
+
+                    <div class="col-md-3 pe-1">
+                        <div class="services-item border shadow-sm p-3">
+                            <h2 class="h4 fw-bolder">FarmLord</h2>
+                            <p>Perfrormance monitoring, Input distribution</p>
+                            <a class="text-decoration-none small green" href="#!">
+                                Learn More
+                                <i class="bi bi-chevron-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-3">
+                        <div class="services-item border shadow-sm p-3">
+                            <h2 class="h4 fw-bolder">Farm <span style="font-family:'Segoe UI'">&</span> Farm Enrollment</h2>
                         <p>GAP training, Onsite remediation</p>
                         <a class="text-decoration-none small green" href="#!">
                             Learn More
                             <i class="bi bi-chevron-right"></i>
                         </a>
-                    </div>
-
-                    <div class="col-lg-3 mb-5 mb-lg-0">
-                        <div class="feature bg-gradient text-white rounded-3 mb-3">
-                            <!-- <i class="bi bi-building"></i> -->
-                            <img src="assets/3.png" class="icon" alt="">
                         </div>
-                        <h2 class="h4 fw-bolder">FarmLord</h2>
-                        <p>Perfrormance monitoring, Input distribution</p>
-                        <a class="text-decoration-none small green" href="#!">
-                            Learn More
-                            <i class="bi bi-chevron-right"></i>
-                        </a>
-                    </div>
-
-                    <div class="col-lg-3">
-                        <div class="feature bg-gradient text-white rounded-3 mb-3">
-                            <!-- <i class="bi bi-toggles2"></i> -->
-                            <img src="assets/4.png" class="icon" alt="">
-                        </div>
-                        <h2 class="h4 fw-bolder">Farm <span style="font-family:'Segoe UI'">&</span> Farm Enrollment</h2>
-                        <p>GAP training, Onsite remediation</p>
-                        <a class="text-decoration-none small green" href="#!">
-                            Learn More
-                            <i class="bi bi-chevron-right"></i>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -128,22 +157,21 @@
 
         
         <!-- Features section-->
-        <section class="my-5 py-5">
+        <section class="bg-yellow-light my-5 py-5">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6 p-4">
-                        <div class="m-4 p-4 styled-border-left">
+                    <div class="col-lg-6 p-5">
+                        <!-- <div class="m-4 p-4 styled-border-left"> -->
                           <img src="assets/trucks.jpg" class="img-fluid round-xl" alt="Agro allied farm trucks">
-
-                        </div>
+                        <!-- </div> -->
                     </div>
 
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 p-5">
                         <p class="mb-0">Why Agro Allied Systems</p>
-                        <h1>The Nexus between Technology and Farming</h1>
+                        <h1>The <span class="accent-green">Nexus</span> between Technology and Farming</h1>
                         <div class="row gx-5">
                             <div class="col-lg-6 mb-5 mb-lg-0">
-                                <div class="feature text-green rounded-3 mb-3">
+                                <div class="feature text-green rounded-3 justify-content-start">
                                     <i class="bi bi-people"></i>
                                 </div>
                                 <h2 class="h4 fw-bolder">People</h2>
@@ -151,7 +179,7 @@
                             </div>
 
                             <div class="col-lg-6 mb-5 mb-lg-0">
-                                <div class="feature text-green rounded-3 mb-3">
+                                <div class="feature text-green rounded-3 justify-content-start">
                                     <i class="bi bi-gear"></i>
                                 </div>
                                 <h2 class="h4 fw-bolder">Infrastructure</h2>
@@ -161,7 +189,7 @@
                         <div class="row">
 
                             <div class="col-lg-6 mb-5 mb-lg-0">
-                                <div class="feature text-green rounded-3 mb-3">
+                                <div class="feature text-green rounded-3 justify-content-start">
                                     <i class="bi bi-lock"></i>
                                 </div>
                                 <h2 class="h4 fw-bolder">Security</h2>
@@ -169,7 +197,7 @@
                             </div>
 
                             <div class="col-lg-6">
-                                <div class="feature text-green rounded-3 mb-3">
+                                <div class="feature text-green rounded-3 justify-content-start">
                                     <i class="bi bi-eye"></i>
                                 </div>
                                 <h2 class="h4 fw-bolder">Transaparency</h2>
@@ -188,7 +216,7 @@
                 <div class="row">
 
                     <div class="col-lg-6">
-                        <h1>How it <span class="curve-green">Works</span></h1>
+                        <h1 class="mb-4">How it <span class="accent-green">Works</span></h1>
                         
                         <div class="mb-5 mb-lg-4 d-flex">
                             <div>
@@ -257,11 +285,8 @@
                             
                     </div>
 
-                    <div class="col-lg-6 p-4">
-                        <div class="m-4 p-4 styled-border-right">
-                          <img src="assets/trucks.jpg" class="img-fluid round-xl" alt="Agro allied farm trucks">
-
-                        </div>
+                    <div class="col-lg-6 p-5">
+                        <img src="assets/agreo-allied-people.jpg" class="img-fluid round-xl" alt="Agro allied farm trucks">
                     </div>
                 </div>  
             </div>
@@ -273,16 +298,16 @@
             <div class="container quick-contact rounded-3 shadow__">
                 <div class="row">
 
-                    <div class="col-lg-8 offset-lg-1 my-5 py-5">
-                        <h2 class="h4 fw-bolder">Experience cutting edge agro <br> tech services</h2>
-                        <p class="lh-sm">Get in touch with us</p>
+                    <div class="col-lg-8 offset-lg-1 text-white my-5 py-5">
+                        <h2 class="h3 mb-3 fw-bolder">Experience cutting edge agro <br> tech services</h2>
+                        <p class="fw-bold lh-sm">Get in touch with us</p>
                         <form action="">
                             <div class="row">
                                 <div class="col-md-6 pe-0">
                                     <input type="text" class="form-control" placeholder="Email Address">
                                 </div>
                                 <div class="col-md-6">
-                                    <button class="btn btn-success px-3">Contact Us</button>
+                                    <button class="btn btn-warning px-3">Contact Us</button>
                                 </div>
                             </div>
                         </form>
@@ -293,7 +318,7 @@
 
 
         <!-- Footer section-->
-        <section class="mt-5 py-5 bg-light">
+        <section class="mt-5 py-5 bg-yellow-light">
             <div class="container rounded-3 shadow__">
                 <div class="row">
 

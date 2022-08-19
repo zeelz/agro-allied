@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "start": "browser-sync start --server --port 5555 --files '*html, css/*css, js/*js'"
+    }
+}
