@@ -5,6 +5,7 @@
     --green-light: #E7F7ED;
     --green: #0ba436;
     --yellow: #F0AE04;
+    --brown: #7c4b2b;
 }
 
 @font-face {
@@ -17,24 +18,39 @@
 
 
 .hero-bg {
-    background-image: linear-gradient(to right,rgba(0,0,0, .25), rgba(0, 0, 0, .25)), url(../assets/agro-allied-landscape.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/agro-allied-landscape.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
     background-position-y: 50%;
+    height: 600px;
 }
-
 
 .hero-bg.about {
-    background-image: linear-gradient(to right, rgba(17, 17, 17, 0.75), rgb(4 171 71 / 50%)), url(../assets/hero-about.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/agro-allied-at-military-base.jpg);
 }
 
-h1, h2, h3 {
+.hero-bg.space {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/photo5861992432298735888.jpg);
+}
+
+.hero-bg.services {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/trucks.jpg);
+}
+
+.hero-bg.large {
+    background-size: 150%;  
+}
+
+
+
+h1, h2, h3, h4 {
     font-family: 'Mogena Regular', sans-serif;
 }
 
 
 .agro-logo {
-    width: 100px;
+    width: 150px;
 }
 
 
@@ -43,15 +59,15 @@ h1, h2, h3 {
     margin: 0 3px;
 }
 
-.nav-item.active {
-    background-color: var(--yellow);
-    padding: 0px 20px;
-    border-radius: 3px;
+.nav-item.active .nav-link {
+    color: var(--yellow);
+    /* padding: 0px 20px;
+    border-radius: 3px; */
 }
 
-
+.navbar-nav .nav-link,
 .nav-item .nav-link {
-    color: white!important
+    color: white
 }
 
 .nav-item:not(.nav-item.active) .nav-link:hover {
@@ -67,6 +83,9 @@ h1, h2, h3 {
 }
 .accent-green {
     color: #04AB47
+}
+.btn-success {
+    background: var(--green)!important;
 }
 
 .curve-yellow,
@@ -158,8 +177,41 @@ a.green {
 
 .services-item {
     height: 160px;
+    background: #09ab474d;
+    border: 1px solid #09ab47;
 }
 
 .bg-yellow-light {
     background: #fdf8eb;
+}
+
+.f-default {
+    font-family: none;
+    /* font-family: monospace; */
+}
+
+.agro-list-marker {
+    list-style: none;
+}
+.agro-list-marker li::marker {
+    /* color: var(--green-light);
+    counter-reset: agro-counter;
+    counter-increment: agro-counter; */
+}
+
+.agro-list-marker li {
+    margin-bottom: 10px;
+}
+
+.agro-list-marker li::before {
+    /* content: counter(agro-counter) */
+
+}
+.footer-links a {
+    color: var(--brown);
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
 }
