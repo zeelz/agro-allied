@@ -27,15 +27,15 @@
 }
 
 .hero-bg.about {
-    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/agro-allied-at-military-base.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/about-us-main.jpg);
 }
 
 .hero-bg.space {
-    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/photo5861992432298735888.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/about-us-main.jpg);
 }
 
 .hero-bg.services {
-    background-image: linear-gradient(to right,rgba(9, 171, 72, .5), rgba(9, 171, 72, .5)), url(../assets/trucks.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/agro-man-with-pad.jpg);
 }
 
 .hero-bg.large {
@@ -148,7 +148,7 @@ h1, h2, h3, h4 {
 }
 
 .round-xl {
-    border-radius: 10px;
+    box-shadow: 8px 10px 0 #c2e6c9;
 }
 
 .text-green {
@@ -178,7 +178,8 @@ a.green {
 .services-item {
     height: 160px;
     background: #09ab474d;
-    border: 1px solid #09ab47;
+    /* border: 1px solid #09ab47; */
+    box-shadow: 6px 6px 0 0 var(--green);
 }
 
 .bg-yellow-light {
@@ -214,4 +215,39 @@ a.green {
 
 .footer-links a:hover {
     text-decoration: underline;
+}
+
+/* VIDEO BG */
+
+.video-wrapper {
+    position: relative;
+    top: 0;
+    width:100%;
+    height: 660px;
+    overflow: hidden;
+    /* z-index: -1; */
+}
+.video-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(9, 171, 71, .3);
+    top: 0;
+}
+
+
+.center-content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.transparent-blk {
+    background: rgba(0, 0, 0, .26);
+}
+
+.team-img-wrpr {
+    overflow: hidden;
+    height: 20rem;
 }
