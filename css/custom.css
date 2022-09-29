@@ -2,9 +2,10 @@
 /* @import url('../assets/KindestReality.ttf'); */
 
 :root {
-    --green-light: #E7F7ED;
+    --green-light: #c2e6c9;
     --green: #0ba436;
     --yellow: #F0AE04;
+    --yellow-light: #fdf8eb;
     --brown: #7c4b2b;
 }
 
@@ -26,23 +27,34 @@
     height: 600px;
 }
 
+.hero-bg.large {
+    background-size: 150%;  
+}
+
 .hero-bg.about {
     background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/about-us-main.jpg);
 }
 
 .hero-bg.space {
-    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/about-us-main.jpg);
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/our-space.jpg);
 }
 
 .hero-bg.services {
     background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/agro-man-with-pad.jpg);
 }
 
-.hero-bg.large {
-    background-size: 150%;  
+.hero-bg.farm-lord {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/farm-lord.jpg);
 }
-
-
+.hero-bg.farm-monitor {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/farm-monitor.jpg);
+}
+.hero-bg.farm-enrollment {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/agreo-allied-people.jpg);
+}
+.hero-bg.crop-gap {
+    background-image: linear-gradient(to right,rgba(9, 171, 72, .3), rgba(9, 171, 72, .3)), url(../assets/crop-gap.jpg);
+}
 
 h1, h2, h3, h4 {
     font-family: 'Mogena Regular', sans-serif;
@@ -150,6 +162,13 @@ h1, h2, h3, h4 {
 .round-xl {
     box-shadow: 8px 10px 0 #c2e6c9;
 }
+.border-green {
+    border: solid 1px var(--green)
+}
+
+.border-green-light {
+    border: solid 1px var(--green-light)
+}
 
 .text-green {
     color: var(--green)
@@ -173,17 +192,23 @@ h1, h2, h3, h4 {
 
 a.green {
     color: #0ba436!important;
+    transition: margin-left linear 0.25s;
+}
+
+a.green:hover i {
+    margin-left: 10px;
+    transition: all linear 0.25s;
 }
 
 .services-item {
-    height: 160px;
-    background: #09ab474d;
-    /* border: 1px solid #09ab47; */
-    box-shadow: 6px 6px 0 0 var(--green);
+    height: 170px;
+    background: var(--yellow-light);
+    box-shadow: 6px 6px 0 0 #c2e6c9;
+    border: solid 1px var(--green);
 }
 
 .bg-yellow-light {
-    background: #fdf8eb;
+    background: var(--yellow-light);
 }
 
 .f-default {
