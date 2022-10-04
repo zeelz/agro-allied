@@ -7,7 +7,7 @@
         <meta name="author" content="" />
         <title>Agro-Allied Business Services | Food and Economic Sustainability through Agro Tech</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="shortcut icon" type="image/jpg" href="assets/logo-sqr.png"/>
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
@@ -112,18 +112,18 @@
             <div class="container">
                 <div class="col-md-7 col-lg-8">
                     <h4 class="mb-3">Contact Us</h4>
-                    <form class="needs-validation" novalidate="">
+                    <form id="contactForm" class="needs-validation" novalidate="">
                       <div class="row g-3">
                         <div class="col-12">
                           <label for="firstName" class="form-label">Full Name</label>
-                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                          <input type="text" class="form-control" id="name" placeholder="" value="" required="">
                           <div class="invalid-feedback">
                             Valid first name is required.
                           </div>
                         </div>
             
             
-                        <div class="col-12">
+                        <!-- <div class="col-12">
                           <label for="username" class="form-label">Username</label>
                           <div class="input-group has-validation">
                             <span class="input-group-text">@</span>
@@ -132,7 +132,7 @@
                               Your username is required.
                             </div>
                           </div>
-                        </div>
+                        </div> -->
             
                         <div class="col-12">
                           <label for="email" class="form-label">Email</label>
@@ -144,7 +144,7 @@
             
                         <div class="col-12">
                           <label for="address" class="form-label">Phone Number</label>
-                          <input type="text" class="form-control" id="address" placeholder="" required="">
+                          <input type="text" class="form-control" id="phone" placeholder="" required="">
                           <div class="invalid-feedback">
                             Please enter your phone number.
                           </div>
@@ -152,45 +152,14 @@
             
                         <div class="col-12">
                           <label for="address2" class="form-label">Message</label>
-                          <textarea class="form-control" id="address2"></textarea>
+                          <textarea class="form-control" id="message"></textarea>
                         </div>
 
-                        <!-- <div>
-                            <div class="col-md-5">
-                            <label for="country" class="form-label">Country</label>
-                            <select class="form-select" id="country" required="">
-                                <option value="">Choose...</option>
-                                <option>United States</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please select a valid country.
-                            </div>
-                            </div>
-                
-                            <div class="col-md-4">
-                            <label for="state" class="form-label">State</label>
-                            <select class="form-select" id="state" required="">
-                                <option value="">Choose...</option>
-                                <option>California</option>
-                            </select>
-                            <div class="invalid-feedback">
-                                Please provide a valid state.
-                            </div>
-                            </div>
-                
-                            <div class="col-md-3">
-                            <label for="zip" class="form-label">Zip</label>
-                            <input type="text" class="form-control" id="zip" placeholder="" required="">
-                            <div class="invalid-feedback">
-                                Zip code required.
-                            </div>
-                            </div>
-                        </div>
-                         -->
                     </div>
             
-                      <button class="w-100 btn btn-success btn-lg mt-3" type="submit">Submit</button>
+                      <button id="formButton" class="w-100 btn btn-success btn-lg mt-3" type="submit">Submit</button>
                     </form>
+                    <p id="formResponse" class="d-none border border text-white mt-2 p-2"> </p>
                   </div>
             </div>
         </section>
@@ -250,7 +219,9 @@
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <!-- <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script> -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
          <!-- nav menu -->
          <script>
@@ -288,6 +259,60 @@
                 // end if innerWidth
             }); 
             // DOMContentLoaded  end
+        </script>
+
+        <script>
+            const searchQuery = new URLSearchParams(location.search)
+            const email = searchQuery.get('email')
+            document.getElementById('email').value = email
+        </script>
+
+        <!-- form handling -->
+        <script>
+
+            const contactForm = document.getElementById('contactForm')
+            const formResponse = document.getElementById('formResponse')
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault()
+                e.stopPropagation()
+
+                const fdata = {
+                    email: contactForm.elements['email'].value,
+                    name: contactForm.elements['name'].value,
+                    phone: contactForm.elements['phone'].value,
+                    message: contactForm.elements['message'].value
+                }
+
+                const anyEmpty = Object.values(fdata).some((value) => value === '')
+
+                if (anyEmpty)  {
+                    formResponse.classList.remove('d-none')
+                    formResponse.classList.add('bg-danger') 
+                    formResponse.innerHTML = 'Please complete all fields'
+                } else {
+                    $
+                    .ajax({
+                        type: 'POST',
+                        url: 'contactus.php',
+                        dataType: 'json',
+                        data: fdata,
+                    })
+                    .done(function(res){
+                        formResponse.classList.remove('d-none')
+                        formResponse.innerHTML = res.feedback
+                        
+                        if(res.success === true) {
+                            formResponse.classList.add('bg-green-light')
+                            formResponse.classList.remove('bg-danger') 
+                            formResponse.classList.remove('text-white') 
+                        } else {   
+                            formResponse.classList.add('bg-danger')                     
+                        }
+                    })
+                }
+            })
+
         </script>
     </body>
 </html>
