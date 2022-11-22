@@ -9,12 +9,13 @@
     --brown: #7c4b2b;
 }
 
-@font-face {
+/* @font-face {
     font-family: 'Mogena Regular';
     font-style: normal;
     font-weight: normal;
     src: local('Mogena Regular'), url('../assets/fonts/Mogena.woff') format('woff');
-}
+} */
+
 
 
 
@@ -57,7 +58,8 @@
 }
 
 h1, h2, h3, h4 {
-    font-family: 'Mogena Regular', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 

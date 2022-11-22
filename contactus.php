@@ -8,21 +8,14 @@ function send_mail()
     ini_set('display_errors', 1);
     error_reporting(E_ALL);
 
-    $from = "info@agroandallied.com";
+    $from = "Agro and Allied <info@agroandallied.com>";
     $to = $_POST['email'];
     $subject = "Mail from AgroAllied website Contact";
     $message = "
-    <html>
-    <head>
-        <title>Mail from AgroAllied website Contact</title>
-    </head>
-    <body>
-        <p> Name: " . $_POST['name'] . "</p>
-        <p> Phone: " . $_POST['phone'] . "</p>
-        <p> Email: " . $_POST['email'] . "</p>
-        <p> Message: " . $_POST['message'] . "</p>
-    </body>
-    </html>
+        <strong>Name</strong>: " . $_POST['name'] . "
+        <strong>Phone</strong>: " . $_POST['phone'] . "
+        <strong>Email</strong>: " . $_POST['email'] . "
+        <strong>Message</strong>: " . $_POST['message'] . "
     ";
 
     $data['from'] = $from;
@@ -30,23 +23,21 @@ function send_mail()
     $data['subject'] = $subject;
     $data['message'] = $message;
 
-
-    // The content-type header must be set when sending HTML email
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers = "From:" . $from;
+    // The content-type header must be set when sending HTML email                
+    $headers = "From: $from\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html\r\n";
+    $headers .= "charset: utf-8\r\n";
+    $headers .= "Reply-To: $from\r\n";
+    $headers .= "X-Mailer: PHP/" . phpversion();
+    $headers .= "X-Priority: 1\r\n";
 
     // Send Email
     if (mail($to, $subject, $message, $headers)) {
-        // if (true) { # for testing
-
         echo json_encode([
             'success' => true,
             'feedback' => 'Form submitted! Our team will respond accordingly'
         ]);
-
-        // echo json_encode($data); # for testing
-
     } else {
         echo json_encode([
             'success' => false,
