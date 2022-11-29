@@ -29,7 +29,7 @@
                     <tr>
                       <td style="font-family: sans-serif;font-size: 16px !important;vertical-align: top;">                       
 
-                        <p style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;">Hello' . $_POST['name'] . ',</p>
+                        <p style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;">Hello ' . $_POST['name'] . ',</p>
                         <p style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;">Thank you for contacting Agro and Allied. <br> This is to acknowledge that we\'ve received your mail. Someone from our team response accordingly.</p>
                         <p style="font-family: sans-serif;font-size: 16px !important;font-weight: normal;margin: 0;margin-bottom: 15px;">Thank you. <br><br>
                         <strong>Agro and Allied Team</strong></p>

@@ -11,6 +11,7 @@ function send_mail()
     $from = "Agro and Allied <info@agroandallied.com>";
     $to = $_POST['email'];
     $subject = "New Enquiry from AgroAllied Website";
+    $subject_to_sender = "We\'ve received your Mail";
     $message = "
         <h3>New enquiry from AgroAllied Website - agroandallied.com
         </h3>
@@ -40,7 +41,7 @@ function send_mail()
     if (mail($to, $subject, $message, $headers)) {
 
         // acknowledgement mail
-        mail($to, $subject, $html_body, $headers);
+        mail($to, $subject_to_sender, $html_body, $headers);
 
         echo json_encode([
             'success' => true,
