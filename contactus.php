@@ -11,7 +11,7 @@ function send_mail()
     $from = "Agro and Allied <info@agroandallied.com>";
     $to = $_POST['email'];
     $subject = "New Enquiry from AgroAllied Website";
-    $subject_to_sender = "We\'ve received your Mail";
+    $subject_to_sender = "We've received your Mail";
     $message = "
         <h3>New enquiry from AgroAllied Website - agroandallied.com
         </h3>
