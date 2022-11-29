@@ -9,7 +9,8 @@ function send_mail()
     error_reporting(E_ALL);
 
     $from = "Agro and Allied <info@agroandallied.com>";
-    $to = $_POST['email'];
+    $to_owner = "info@agroandallied.com";
+    $to_sender = $_POST['email'];
     $subject = "New Enquiry from AgroAllied Website";
     $subject_to_sender = "We've received your Mail";
     $message = "
@@ -22,7 +23,7 @@ function send_mail()
     ";
 
     $data['from'] = $from;
-    $data['to'] = $to;
+    $data['to'] = $to_sender;
     $data['subject'] = $subject;
     $data['message'] = $message;
 
@@ -38,10 +39,10 @@ function send_mail()
     include('email.php'); // $html_body;
 
     // Send Email
-    if (mail($to, $subject, $message, $headers)) {
+    if (mail($to_owner, $subject, $message, $headers)) {
 
         // acknowledgement mail
-        mail($to, $subject_to_sender, $html_body, $headers);
+        mail($to_sender, $subject_to_sender, $html_body, $headers);
 
         echo json_encode([
             'success' => true,
