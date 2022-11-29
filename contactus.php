@@ -10,12 +10,14 @@ function send_mail()
 
     $from = "Agro and Allied <info@agroandallied.com>";
     $to = $_POST['email'];
-    $subject = "Mail from AgroAllied website Contact";
+    $subject = "New Enquiry from AgroAllied Website";
     $message = "
-        <strong>Name</strong>: " . $_POST['name'] . "
-        <strong>Phone</strong>: " . $_POST['phone'] . "
-        <strong>Email</strong>: " . $_POST['email'] . "
-        <strong>Message</strong>: " . $_POST['message'] . "
+        <h3>New enquiry from AgroAllied Website - agroandallied.com
+        </h3>
+        <p><strong>Name:</strong> " . $_POST['name'] . "</p>
+        <p><strong>Phone:</strong> " . $_POST['phone'] . "</p>
+        <p><strong>Email:</strong> " . $_POST['email'] . "</p>
+        <p><strong>Message:</strong> " . $_POST['message'] . "</p>
     ";
 
     $data['from'] = $from;
@@ -32,8 +34,14 @@ function send_mail()
     $headers .= "X-Mailer: PHP/" . phpversion();
     $headers .= "X-Priority: 1\r\n";
 
+    include('email.php'); // $html_body;
+
     // Send Email
     if (mail($to, $subject, $message, $headers)) {
+
+        // acknowledgement mail
+        mail($to, $subject, $html_body, $headers);
+
         echo json_encode([
             'success' => true,
             'feedback' => 'Form submitted! Our team will respond accordingly'

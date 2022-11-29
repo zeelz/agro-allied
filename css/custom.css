@@ -312,7 +312,7 @@ a.green:hover i {
     }
 
     .team .img-fluid {
-        max-width: none;
+        max-width: unset;
         height: 100%;
     }
 }
